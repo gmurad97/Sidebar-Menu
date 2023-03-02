@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+*,
+*::before,
+*::after {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+:root {
+    --bgColor: #18191A;
+    --bgSidebarColor: #242526;
+    --txtColor: #d2dae2;
+}
+
+body {
+    background-color: var(--bgColor);
+    font-family: "Poppins";
+}
+
+.container {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+}
+
+.sidebar {
+    position: relative;
+    width: 250px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: var(--bgSidebarColor);
+    padding: 16px;
+}
+
+.s-logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.s-logo>img {
+    margin-right: 16px;
+}
+
+
+.s-logo-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.s-logo-info>p {
+    line-height: 18px;
+    color: var(--txtColor);
+}
+
+.s-logo-info>p:nth-of-type(1) {
+    font-weight: bold;
+}
+
+.s-logo-info>p:nth-of-type(2) {
+    font-weight: lighter;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.s-minimize {
+    position: absolute;
+    top: 20px;
+    right: -15px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #3A3C3C;
+    border-radius: 50%;
+    font-size: 16px;
+    color: var(--txtColor);
+    cursor: pointer;
+}

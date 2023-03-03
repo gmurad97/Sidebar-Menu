@@ -1,37 +1,47 @@
 let sidebarShow = true;
 let sidebarBlock = document.getElementsByClassName("sidebar")[0];
-let sMenuLiList =  document.querySelector(".s-menu").getElementsByTagName("p");
-let sSettingLiList =  document.querySelector(".s-setting").getElementsByTagName("p");
-let marginOff = document.getElementsByClassName("fa-customize");
-let x = document.getElementsByClassName("s-logo-info")[0];
+/*Begin - Array variables*/
+let sMenuLiList = document.querySelector(".s-menu").getElementsByTagName("p");
+let sSettingLiList = document.querySelector(".s-setting").getElementsByTagName("p");
+let marginControl = document.getElementsByClassName("fa-customize");
+/*Ended - Array variables*/
+let logoInfo = document.getElementsByClassName("s-logo-info")[0];
+let logoMargin = document.getElementById("sidebar-logo");
 
-function minimizeMenu(){
-    if(sidebarShow){
+
+function minimizeMenu(e) {
+    if (sidebarShow) {
         sidebarShow = false;
         sidebarBlock.style.width = "64px";
-        for(let li of sMenuLiList){
-            li.style.display = "none";
+        logoMargin.style.marginRight = "0px";
+        logoInfo.style.display = "none";
+        for (let eLi of sMenuLiList) {
+            eLi.style.display = "none";
         }
-        for(let li of sSettingLiList){
-            li.style.display = "none";
+        for (let eLi of sSettingLiList) {
+            eLi.style.display = "none";
         }
-        for(let li of marginOff){
-            li.style.marginRight = "0px";
+        for (let eLi of marginControl) {
+            eLi.style.marginRight = "0px";
         }
-        x.style.display = "none";
+        e.classList.remove("fa-chevron-left");
+        e.classList.add("fa-chevron-right");
     }
-    else{
+    else {
         sidebarShow = true;
         sidebarBlock.style.width = "300px";
-        for(let li of sMenuLiList){
-            li.style.display = "flex";
+        logoMargin.style.marginRight = "16px";
+        logoInfo.style.display = "flex";
+        for (let eLi of sMenuLiList) {
+            eLi.style.display = "flex";
         }
-        for(let li of sSettingLiList){
-            li.style.display = "flex";
+        for (let eLi of sSettingLiList) {
+            eLi.style.display = "flex";
         }
-        for(let li of marginOff){
-            li.style.marginRight = "16px";
+        for (let eLi of marginControl) {
+            eLi.style.marginRight = "16px";
         }
-        x.style.display = "flex";
+        e.classList.remove("fa-chevron-right");
+        e.classList.add("fa-chevron-left");
     }
 }
